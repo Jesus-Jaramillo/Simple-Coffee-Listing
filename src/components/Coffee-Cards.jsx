@@ -12,12 +12,8 @@ import bgcafe from '../assets/Images/bg-cafe.jpg'
 import star from '../assets/Icons/Star.svg'
 import star_fill from '../assets/Icons/Star_fill.svg'
 import vector from '../assets/Icons/Vector.svg'
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Backdrop from '@mui/material/Backdrop';
 import review from '../assets/Icons/preReview.svg'
-import ModalInfo from './modal-info';
+import ModalOpen from './modal-Open';
 
 const style = {
     position: 'absolute',
@@ -134,42 +130,11 @@ function CardCoffes() {
                         </div>
                     )}
                 </div>
-                <div>
-                    <Modal
-                        aria-labelledby="transition-modal-title"
-                        aria-describedby="transition-modal-description"
-                        open={open}
-                        onClose={handleClose}
-                        closeAfterTransition
-                        BackdropComponent={Backdrop}
-                        BackdropProps={{
-                            timeout: 500,
-                        }}
-                    >
-                        <Fade in={open}>
-                            <Box sx={style} className='modal-open'>
-                                {selectedCoffees && (
-                                    <>
-                                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                                        </Typography>
-                                        <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                                            <div className='modal-controller'>
-                                                <img className='img-modal' src={selectedCoffees.image} alt={coffee.name} />
-                                                <br />
-                                                <b> Name: </b> {selectedCoffees.name}
-                                                <br />
-                                                <b> Rating: </b> {selectedCoffees?.rating ? selectedCoffees.rating : 'No rating'}
-                                                <br />
-                                                <b> Price: </b> {selectedCoffees.price}
-                                            </div>
-                                        </Typography>
-                                    </>
-                                )}
-                            </Box>
-                        </Fade>
-                    </Modal>
-                    <ModalInfo/>
-                </div>
+                <ModalOpen
+                    open={open}
+                    handleClose={handleClose}
+                    selectedCoffee={selectedCoffees}
+                />
             </div>
         </div>
     );

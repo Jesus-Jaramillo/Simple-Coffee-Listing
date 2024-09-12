@@ -173,6 +173,7 @@
 
 .modal-controller{
     display: inline-block;
+    color: #111315;
     font-family: "Inter", sans-serif !important;
     font-optical-sizing: auto !important;
     font-style: normal !important;
