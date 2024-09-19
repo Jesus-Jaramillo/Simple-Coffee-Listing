@@ -1,6 +1,7 @@
 {
   "name": "cafe-proyect",
   "private": true,
+  "homepage": "https://jesus-jaramillo.github.io/Simple-Coffee-Listing/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
